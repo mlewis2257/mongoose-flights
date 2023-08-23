@@ -1,0 +1,34 @@
+<%- include('../partials/header') %>
+
+<h2>Get a flight</h2>
+<form action="/flights" method="POST">
+  <label
+    >Flight Airlines:
+    <select name="airline">
+      <option value="United">United</option>
+      <option value="Southwest">Southwest</option>
+      <option value="Frontier">Frontier</option>
+      <option value="Alaskan">Alaskan</option>
+    </select> </label
+  ><br />
+  <label
+    >Airport:
+    <select name="airport">
+      <option value="DEN">Denver International</option>
+      <option value="LAX">Los Angeles International</option>
+      <option value="SFO">San Francisco International</option>
+      <option value="HTX">Houston Hobby Airport</option>
+      <option value="OAK">Oakland International</option>
+    </select> </label
+  ><br />
+  <label>Departure: <input type="datetime-local" name="date" checked /> </label
+  ><br />
+  <label for="">
+    Flight Number:
+    <input type="number" name="flightNo" />
+  </label>
+  <button type="submit">Add Flight</button>
+</form>
+<p><%= errorMsg %></p>
+
+<%- include('../partials/footer') %>

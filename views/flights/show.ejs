@@ -1,0 +1,24 @@
+<%- include('../partials/header') %>
+<section>
+  <h3>Flight Details</h3>
+  <div>Airlines: <%= flight.airline %></div>
+  <div>Airport: <%= flight.airport %></div>
+  <div>Flight #: <%= flight.flightNo %></div>
+  <div>Destination: <%= flight.destination %></div>
+  <div>Departure Date: <%= flight.departs %></div>
+  <br />
+  <form action="/flights/<%= flight._id %>/destination" method="post">
+    <label for=""> New Destinations </label>
+    <select name="destination" id="">
+      <option value="DEN">Denver International</option>
+      <option value="LAX">Los Angeles International</option>
+      <option value="SFO">San Francisco International</option>
+      <option value="HTX">Houston Hobby Airport</option>
+      <option value="OAK">Oakland International</option>
+    </select>
+    <input type="datetime-local" name="arrival" />
+    <br />
+    <button type="submit">Add Destination</button>
+  </form>
+</section>
+<%- include('../partials/footer') %>
